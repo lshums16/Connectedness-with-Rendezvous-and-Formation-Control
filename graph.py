@@ -33,7 +33,9 @@ class Graph():
                         self.delta_graph[j, i] = 1
                 else:
                     if self.dist_graph[i, j] > self.delta:
-                        raise ValueError("Graph disconnected, fix control law")
+                        print("Graph disconnected!")
+                        self.delta_graph[i, j] = 0
+                        self.delta_graph[j, i] = 0
                 
                     
     def update_neighbors_graph(self):
@@ -43,5 +45,9 @@ class Graph():
                     if self.dist_graph[i, j] <= (self.delta - self.epsilon):
                         self.neighbors_graph[i, j] = 1
                         self.neighbors_graph[j, i] = 1
+                else:
+                    if self.delta_graph[i, j] == 0:
+                        self.neighbors_graph[i, j] = 0
+                        self.neighbors_graph[j, i] = 0
                 
                     
