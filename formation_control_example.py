@@ -3,7 +3,10 @@ from scipy.integrate import ode
 from Classes.multiagent_system import MultiAgentSystem
 import os
 from Classes.gif_generation import GIFGenerator
-         
+
+"""
+TODO: debug why formation control does not seem to work except in very basic cases (i.e. low number of agents, and most are already in formation)
+"""
 
 ### SIMULATION PARAMETERS ###
 t_start = 0
