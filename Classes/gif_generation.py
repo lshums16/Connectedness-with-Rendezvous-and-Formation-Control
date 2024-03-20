@@ -20,6 +20,8 @@ class GIFGenerator:
     # delete the .png files in the images/ directory
     def delete_frames(self):
         directory_path = os.path.join(os.getcwd(), "images")
+        if not os.path.isdir(directory_path):
+            os.mkdir(directory_path)
         files = os.listdir(directory_path)
         for file in files:
                 file_path = os.path.join(directory_path, file)
